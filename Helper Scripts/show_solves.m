@@ -32,8 +32,8 @@ for key = show.closed.keys'
                  'MarkerFaceColor' ,'auto'       ,...
                  'MarkerIndices'   ,ind_success(:) };
 
-   plot(ax_iter,s.traj.iterations,  varargin{:})
-   plot(ax_time,s.traj.solve_times, varargin{:}, 'DisplayName',key)
+   plot(ax_iter,s.traj.iterations,       varargin{:})
+   plot(ax_time,s.traj.solve_times*1000, varargin{:}, 'DisplayName',key)
 
 
    % Error markers
