@@ -23,6 +23,15 @@ The study demonstrates and compares:
 
 The code is intended both for reproducing the paper results and for enabling readers to modify the examples, test alternative sensitivity modifications, and compare OSM against other NMPC tuning strategies.
 
+## Results
+### Example:
+<p align="center">
+  <img src="./closed_loop_results.png" alt="Closed-loop comparison of NMPC methods" width="750">
+</p>
+The figure shows the closed-loop behavior of the compared NMPC formulations for the CSTR case study.
+Colors: 
+
+
 ## Requirements
 
 The code was developed and tested with:
@@ -43,7 +52,7 @@ addpath('path/to/casadi')
 addpath(genpath(pwd))
 ```
 
-Run the scripts from the root folder of this repository.
+Ensure all files are available on the MATLAB path.
 
 ## Reproducibility information
 
