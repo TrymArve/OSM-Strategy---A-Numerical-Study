@@ -27,7 +27,7 @@ for loop = ["open", "closed"]
 
    show.(loop)("classic").style     = '-';
    show.(loop)("osm").style         = '-';
-   show.(loop)("aggressive").style  = '--';
+   show.(loop)("aggressive").style  = ':';
    show.(loop)("linear_term").style = '--';
 
    show.(loop)("classic").linewidth     = 2;
@@ -37,7 +37,6 @@ for loop = ["open", "closed"]
 
 
    %%% Tiles:
-   % Tiles.(loop) = struct;
    Tiles.(loop).AX = configureDictionary('string','matlab.graphics.axis.Axes');
    Tiles.(loop).time_scale = "min";
    Tiles.(loop).ref = ref;
@@ -48,5 +47,5 @@ end
 
 
 
-title(Tiles.open.layout,"Open-Loop Solutions")
+title(Tiles.open.layout  ,  "Open-Loop Solutions")
 title(Tiles.closed.layout,"Closed-Loop Simulations")

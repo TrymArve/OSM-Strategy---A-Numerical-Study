@@ -1,8 +1,8 @@
 
 fig = figure;
-Tiles = tiledlayout(fig,'flow');
+Tiles_solves = tiledlayout(fig,'flow');
 
-ax_iter = nexttile(Tiles);
+ax_iter = nexttile(Tiles_solves);
 hold(ax_iter,"on")
 grid(ax_iter,"on")
 title(ax_iter,'Numer of Iterations')
@@ -10,7 +10,7 @@ xlabel(ax_iter,'Solution Number')
 ylabel(ax_iter,'N. Iterations')
 
 
-ax_time = nexttile(Tiles);
+ax_time = nexttile(Tiles_solves);
 hold(ax_time,"on")
 grid(ax_time,"on")
 title(ax_time,'Solve Times')

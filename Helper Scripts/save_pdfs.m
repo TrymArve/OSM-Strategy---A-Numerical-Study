@@ -1,0 +1,82 @@
+%% PDFs for paper
+
+
+clc; clear; close all;
+Set_Up
+
+close(Tiles.open.fig)
+
+methods = ["classic","osm","aggressive","linear_term"];
+myCases = ["case_1", "case_2"];
+loop = "closed";
+
+showcase = dictionary;
+
+
+for Case = myCases
+   for method = methods
+      load("shw_"+loop+"_"+method+"_"+Case)
+      show.(loop)(method).traj = shw.traj;
+   end
+   show_results
+   showcase(Case) = {Tiles.(loop).AX};
+   Tiles.(loop).AX = configureDictionary('string','matlab.graphics.axis.Axes');
+end
+
+
+
+
+
+c=0;
+for cas = showcase.keys'
+   c = c+1;
+   k=0;
+   for key = showcase{cas}.keys'
+      k=k+1;
+      tileplace = showcase.numEntries*(k-1) + c;
+      rand_color = colorcode("random_name");
+      % disp("Placing axes "+cas+" - "+key+" in tile: "+tileplace+", with color: "+rand_color)
+      showcase{cas}(key).Layout.Tile = tileplace;
+      % showcase{cas}(key).Color = colorcode(rand_color);
+
+      if c~=1
+         showcase{cas}(key).YLabel.String = "";
+      end
+      
+      if k ~= showcase{cas}.numEntries
+         showcase{cas}(key).XLabel.String = "";
+      end
+
+      if cas == "case_2"
+         constraint_color = colorcode("crimson");
+         constraint_syle = '--';
+         switch key
+            case "state_T"
+               plot(showcase{cas}(key),showcase{cas}(key).XLim,[1 1]*361,Color=constraint_color,LineStyle=constraint_syle)
+            case "input_T_c"
+               plot(showcase{cas}(key),showcase{cas}(key).XLim,[1 1]*315,Color=constraint_color,LineStyle=constraint_syle)
+         end
+      end
+   end
+end
+
+drawnow   % let tiledlayout/axes updates finish first
+
+Tiles.(loop).layout.Title.String = "";
+
+fig = Tiles.(loop).fig;
+fig.Color = [1 1 1];
+
+fig.WindowStyle = "normal";   % important if figure was docked
+fig.WindowState = "normal";   % important if figure was maximized/minimized
+fig.Units = "centimeters";
+
+drawnow   % let the window state change take effect
+
+fig.Position = [3.0000    3.0000    9.0000   12.3723];
+
+drawnow
+
+%%
+
+printfigure('Ex_1_2_Comparisons_all_methods','columntype','double','keep_size',true)
