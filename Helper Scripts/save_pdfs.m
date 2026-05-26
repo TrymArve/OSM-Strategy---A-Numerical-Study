@@ -63,6 +63,8 @@ end
 drawnow   % let tiledlayout/axes updates finish first
 
 Tiles.(loop).layout.Title.String = "";
+showcase{"case_1"}("state_C_A").Title.String = "Example 1";
+showcase{"case_2"}("state_C_A").Title.String = "Example 2";
 
 fig = Tiles.(loop).fig;
 fig.Color = [1 1 1];
@@ -74,6 +76,23 @@ fig.Units = "centimeters";
 drawnow   % let the window state change take effect
 
 fig.Position = [3.0000    3.0000    9.0000   12.3723];
+
+
+Tiles.(loop).layout.TileSpacing = "compact";
+Tiles.(loop).layout.Padding = "compact";
+
+% --- Legend along bottom
+ax_lgd = showcase{"case_2"}("state_T");
+
+lgd = legend(ax_lgd, {'reference','classic','OSM','aggressive','linear-term','bounds'}, ...
+    'Orientation', 'horizontal', ...
+    'NumColumns', 3);
+
+lgd.Color = [1 1 1];
+lgd.Box = "off";
+lgd.Layout.Tile = "south";
+
+drawnow
 
 drawnow
 

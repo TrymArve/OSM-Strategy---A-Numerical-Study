@@ -18,7 +18,7 @@ QPoptions = optimoptions( ...
 ws = optimwarmstart(C.decision.vec.num,QPoptions); % quadprog warmstart
 
 % Maximum number of SQP iterations:
-sqp_max_iter = 500;
+sqp_max_iter = 1500;
 
 % Choose reset or not guesses back to reference of not
 reset_OL_guess = true;

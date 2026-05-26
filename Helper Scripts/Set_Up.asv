@@ -62,7 +62,7 @@ disc = discretize_dynamics("f", model.f, ...
 %                            "collocation_polynomial_order",2,...
 %                            "collocation_polynomial_type","radau");
 
-% (note that for Multiple Shooting vs. Single Shooting, go to "N_shooting_intervals")
+% (note that for Multiple Shooting vs. Single Shooting, set "N_shooting_intervals" equal to or smaller than the )
 
 
 %%% ----------------------------------------- SIMULATION SETTINGS:
