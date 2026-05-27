@@ -58,7 +58,7 @@ for simple cases, such as our example, where a variable can be supressed by
 simply increasing its weight. In the general decoupling case, it is not
 obvious how to penalize the particular coupling, and not usage of those
 inputs in other couplings. Moreover, the preferred strucutre may not be
-that of a decoupling scheme, and in general, a cost-function-shaping/tunin
+that of a decoupling scheme, and in general, a cost-function-shaping/tuning
 strategy is even less applicable.
 
 The linear term also achieves a decoupling effect, but suffers all the same

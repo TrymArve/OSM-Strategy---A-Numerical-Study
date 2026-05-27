@@ -25,13 +25,13 @@ show_solves
 %%% Print:
 fprintf("\nAverage number of iterations when warm started by previous solution:\n")
 for method = methods
-   fprintf("  %-14s -> %8.2f\n", method, mean(iterations.(method)(2:end)))
+   fprintf("  %-14s -> %8.2f iterations\n", method, mean(iterations.(method)(2:end)))
    % first control signal is not warmstarted
 end
 
 fprintf("\nAverage solve time [ms] when warm started by previous solution:\n")
 for method = methods
-   fprintf("  %-14s -> %8.4f\n", method, mean(solve_times.(method)(2:end)))
+   fprintf("  %-14s -> %8.4f ms\n", method, mean(solve_times.(method)(2:end))*1000)
    % first control signal is not warmstarted
 end
 
@@ -58,10 +58,12 @@ for simple cases, such as our example, where a variable can be supressed by
 simply increasing its weight. In the general decoupling case, it is not
 obvious how to penalize the particular coupling, and not usage of those
 inputs in other couplings. Moreover, the preferred strucutre may not be
-that of a decoupling scheme, and in general, a cost-function-shaping/tunin
+that of a decoupling scheme, and in general, a cost-function-shaping/tuning
 strategy is even less applicable.
 
-
+The linear term also achieves a decoupling effect, but suffers all the same
+caveats as the aggressive tuning strategy; hard to tune, poor numerics, and
+not applicable in the general case.
 
 Overall, the OSM strategy offers a simpler path to decoupling when, when
 meticulous tuning would otherwise be applicable, and extend the decoupling
