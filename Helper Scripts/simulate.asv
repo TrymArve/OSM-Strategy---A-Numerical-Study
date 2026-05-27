@@ -17,7 +17,7 @@ iteration_traj = [];
 solve_time_traj = [];
 success_traj = [];
 
-condition.(method) = {};
+Condition_Number_W = {};
 
 state = state_traj;
 
@@ -36,7 +36,7 @@ while time_traj(end) < sim.T
    switch method
       case {"classic","aggressive","linear_term"}
          solve_SQP
-         % condition.(method)(end+1) = {condition_number_W}; % only if checking the condition number...
+         Condition_Number_W(end+1) = {condition_number_W}; % only if checking the condition number...
       case "osm"
          solve_FB
       otherwise

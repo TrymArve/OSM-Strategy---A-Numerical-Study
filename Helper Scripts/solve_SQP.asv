@@ -107,9 +107,11 @@ Thus:
 
    
    %%% If you want to check the condition number of the Hessian:
-      % condition_number_W(end+1) = cond(W);
+   if 1
+      condition_number_W(end+1) = cond(W);
+   end
 
-
+   
 
    %%%% Solve QP subproblem:
    [ws,~,QP_success,c,lag_mult] = quadprog(W,J,H,h,G,g,[],[],ws);

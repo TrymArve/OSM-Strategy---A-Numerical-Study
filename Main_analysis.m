@@ -25,13 +25,13 @@ show_solves
 %%% Print:
 fprintf("\nAverage number of iterations when warm started by previous solution:\n")
 for method = methods
-   fprintf("  %-14s -> %8.2f\n", method, mean(iterations.(method)(2:end)))
+   fprintf("  %-14s -> %8.2f iterations\n", method, mean(iterations.(method)(2:end)))
    % first control signal is not warmstarted
 end
 
 fprintf("\nAverage solve time [ms] when warm started by previous solution:\n")
 for method = methods
-   fprintf("  %-14s -> %8.4f\n", method, mean(solve_times.(method)(2:end)))
+   fprintf("  %-14s -> %8.4f ms\n", method, mean(solve_times.(method)(2:end))*1000)
    % first control signal is not warmstarted
 end
 
