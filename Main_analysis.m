@@ -42,7 +42,7 @@ end
 %%
 %{
 
-The aggressive tuning is able to produce the same solution as OSM, and
+The aggressive tuning is able to approximate the solution of OSM, and
 does so with similar efficiency as the OSM implementation. Though, achieving
 this decopling effect with an aggressive controller requires careful
 tuning. The tuning must be aggressive enough to approximate the OSM
@@ -53,7 +53,7 @@ strategy does not require tuning, as the sought behavior appears
 automatically form the imposed structure. In fact, the OSM strategy can be
 tuned to accomodate other preferenecs, while respecting the preferred structure.
 
-Furthermore, note that the cost-function-shaping approah is only possible
+Furthermore, note that the cost-function-shaping approah is mostly possible
 for simple cases, such as our example, where a variable can be supressed by
 simply increasing its weight. In the general decoupling case, it is not
 obvious how to penalize the particular coupling, and not usage of those
