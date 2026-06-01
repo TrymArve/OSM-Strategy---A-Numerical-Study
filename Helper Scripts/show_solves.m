@@ -17,7 +17,7 @@ title(ax_time,'Solve Times')
 xlabel(ax_time,'Solution Number')
 ylabel(ax_time,'Solve Time [ms]')
 
-shape = dictionary("classic","o","osm","square","linear_term","diamond","aggressive","^");
+shape = dictionary("classic","o","osm","square","linear_term","diamond","aggressive","^","aggressive_2","v");
 
 for key = show.closed.keys'
    s = show.closed(key);

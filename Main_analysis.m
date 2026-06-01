@@ -6,9 +6,9 @@ Set_Up
 iterations  = struct;
 solve_times = struct;
 
-Case = "case_2";
+Case = "case_1";
 
-methods = ["classic","osm","aggressive","linear_term"];
+methods = ["classic","osm","aggressive","aggressive_2","linear_term"];
 for loop = ["open", "closed"]
    for method = methods
       load("shw_"+loop+"_"+method+"_"+Case)

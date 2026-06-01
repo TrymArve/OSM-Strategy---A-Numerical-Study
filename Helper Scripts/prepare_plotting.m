@@ -15,25 +15,36 @@ for loop = ["open", "closed"]
    % Graphs:
    show.(loop) = dictionary;
 
-   show.(loop)("classic")     = struct;
-   show.(loop)("osm")         = struct;
-   show.(loop)("aggressive")  = struct;
-   show.(loop)("linear_term") = struct;
+   show.(loop)("classic")      = struct;
+   show.(loop)("osm")          = struct;
+   show.(loop)("linear_term")  = struct;
+   show.(loop)("aggressive")   = struct;
+   show.(loop)("aggressive_2") = struct;
+   
 
    show.(loop)("classic").color       = colorcode("green");
    show.(loop)("osm").color           = colorcode("yellow");
-   show.(loop)("aggressive").color    = colorcode("red");
+   show.(loop)("aggressive").color    = colorcode("cyan");
+   show.(loop)("aggressive_2").color  = colorcode("red");
    show.(loop)("linear_term").color   = colorcode("blue");
 
-   show.(loop)("classic").style     = '-';
-   show.(loop)("osm").style         = '-';
-   show.(loop)("aggressive").style  = ':';
-   show.(loop)("linear_term").style = '--';
+   show.(loop)("classic").style      = '-';
+   show.(loop)("osm").style          = '-';
+   show.(loop)("aggressive").style   = '-';
+   show.(loop)("aggressive_2").style = '--';
+   show.(loop)("linear_term").style  = '-';
 
-   show.(loop)("classic").linewidth     = 2;
-   show.(loop)("osm").linewidth         = 2;
-   show.(loop)("aggressive").linewidth  = 1;
-   show.(loop)("linear_term").linewidth = 1;
+   show.(loop)("classic").linewidth      = 1;
+   show.(loop)("osm").linewidth          = 2;
+   show.(loop)("aggressive").linewidth   = 0.7;
+   show.(loop)("aggressive_2").linewidth = 0.7;
+   show.(loop)("linear_term").linewidth  = 0.7;
+
+   show.(loop)("classic").display_name = "classic";
+   show.(loop)("osm").display_name = "OSM";
+   show.(loop)("aggressive").display_name= "aggr.(1)";
+   show.(loop)("aggressive_2").display_name = "aggr.(2)";
+   show.(loop)("linear_term").display_name  = "linear-term";
 
 
    %%% Tiles:

@@ -21,7 +21,7 @@ initial_state.case_2("T")   = full(ref.state(model.ind.state.T))   -1;
 
 
 %%%% Simulation time
-sim.T   = 60; % seconds - total simulation time
+sim.T   = 40; % seconds - total simulation time
 
 
 %%%%%%%% DOP SETTINGS:
@@ -50,8 +50,8 @@ ref_scale_limit = 1;
 for type = ["input", "outpu"]
    base_weights.(type) = dictionary(model.names.(type),zeros(1,model.dim.(type)));
    for name = model.names.(type)
-      if ref.(type)(model.ind.(type).(name)) < ref_scale_limit
-         ref_scale = ref_scale_limit;
+      if ismember(name,["q_plus","q_minus"])
+         ref_scale = model.parameters("q_ref");
       else
          ref_scale = ref.(type)(model.ind.(type).(name));
       end

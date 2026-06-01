@@ -26,6 +26,7 @@ show_results
 
 loop = "open";
 aggressiveNMPC
+aggressive2NMPC
 show_results
 
 
@@ -47,8 +48,8 @@ show_results
 
 loop = "closed";
 aggressiveNMPC
+aggressive2NMPC
 show_results
-
 
 %% For Linear-penalty formulation:
 clc; clear; close all;
@@ -73,5 +74,11 @@ show_results
 
 
 
+
+%%
+%%% Print:
+disp("Stats for "+method+":")
+fprintf("  %-14s -> %8.4f iterations\n", method, mean(show.(loop)(method).traj.iterations(2:end)))
+fprintf("  %-14s -> %8.4f ms\n", method, mean(show.(loop)(method).traj.solve_times(2:end))*1000)
 
 

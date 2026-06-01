@@ -3,30 +3,22 @@
 
 %%% Classic NMPC
 
-method = "linear_term";
+method = "aggressive_2";
 
 %%% -------------------- Define Main Objective:
 
 weights = base_weights; % copy nominal weights
 
 % Modfy weight before making quadratic objective:
-quad_term = 1;
-weights.input("q_plus")   = weights.input("q_plus") *quad_term; % q-split
-weights.input("q_minus")  = weights.input("q_minus")*quad_term; % q-split
+quad_term = 151;
+weights.input("q")  = weights.input("q")*quad_term; % Much more aggressive tuning to dampen use of q
 
 % Use standard quadratic objective:
 make_quadratic_objective % this created the quadratic baseline
 
 % Modify objective further:
-linear_weight = 0.05;
-
-for k = 1:N_horizon
-   u_k = C.longshot.input.vars(:, k);
-   Du = u_k - ref.input;
-
-   obj = obj + Du(model.ind.input.q_plus) *linear_weight;
-   obj = obj + Du(model.ind.input.q_minus)*linear_weight;
-end
+linear_weight = 0;
+% don't...
 
 % Solidify objective:
 create_objective_functions % This solidifies the objective as is, creating the needed CasADi graphs for solution algorithms
@@ -38,6 +30,7 @@ create_objective_functions % This solidifies the objective as is, creating the n
 %%% ------------------- PREPARE DERIVATIVES OF DOP
 
 make_derivatives
+
 
 
 %%% ------------------- SOLVE and SAVE:

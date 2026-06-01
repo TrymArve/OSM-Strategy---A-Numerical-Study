@@ -10,14 +10,14 @@ method = "aggressive";
 weights = base_weights; % copy nominal weights
 
 % Modfy weight before making quadratic objective:
-quad_term = 130;
+quad_term = 11;
 weights.input("q")  = weights.input("q")*quad_term; % Much more aggressive tuning to dampen use of q
 
 % Use standard quadratic objective:
 make_quadratic_objective % this created the quadratic baseline
 
 % Modify objective further:
-linear_term = 0;
+linear_weight = 0;
 % don't...
 
 % Solidify objective:

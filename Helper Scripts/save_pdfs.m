@@ -6,7 +6,7 @@ Set_Up
 
 close(Tiles.open.fig)
 
-methods = ["classic","osm","aggressive","linear_term"];
+methods = ["osm","classic","aggressive","aggressive_2","linear_term"];
 myCases = ["case_1", "case_2"];
 loop = "closed";
 
@@ -49,7 +49,7 @@ for cas = showcase.keys'
 
       if cas == "case_2"
          constraint_color = colorcode("crimson");
-         constraint_syle = '--';
+         constraint_syle = ':';
          switch key
             case "state_T"
                plot(showcase{cas}(key),showcase{cas}(key).XLim,[1 1]*361,Color=constraint_color,LineStyle=constraint_syle)
@@ -84,7 +84,13 @@ Tiles.(loop).layout.Padding = "compact";
 % --- Legend along bottom
 ax_lgd = showcase{"case_2"}("state_T");
 
-lgd = legend(ax_lgd, {'reference','classic','OSM','aggressive','linear-term','bounds'}, ...
+display_names = {};
+for method = show.(loop).keys'
+   display_names{end+1} = char(show.(loop)(method).display_name);
+end
+
+
+lgd = legend(ax_lgd, [{'reference'}, display_names(:)' ], ...
     'Orientation', 'horizontal', ...
     'NumColumns', 3);
 

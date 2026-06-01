@@ -21,7 +21,7 @@ condition.(method) = {};
 
 state = state_traj;
 
-toggle_display_on = true;
+
 
 
 fprintf('Simulating ... '); time_simulation = tic;
@@ -34,7 +34,7 @@ while time_traj(end) < sim.T
    % solver dependent
    time_solve = tic;
    switch method
-      case {"classic","aggressive","linear_term"}
+      case {"classic","aggressive","aggressive_2","linear_term"}
          solve_SQP
          % condition.(method)(end+1) = {condition_number_W}; % only if checking the condition number...
       case "osm"

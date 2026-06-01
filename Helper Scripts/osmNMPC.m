@@ -14,7 +14,7 @@ quad_term = 1;
 make_quadratic_objective % this created the quadratic baseline
 
 % Modify objective:
-linear_term = 0;
+linear_weight = 0;
 % Do not modify objective further... (here we could add other stuff, like linear terms)
 
 % Solidify objective:

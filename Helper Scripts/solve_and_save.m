@@ -28,6 +28,7 @@ switch loop
       
 
    case "closed"
+      toggle_display_on = true;
       simulate
       
 end
@@ -58,6 +59,12 @@ switch loop
       show.closed(method).traj.iterations = iteration_traj;
       show.closed(method).traj.solve_times = solve_time_traj;
       show.closed(method).traj.success = success_traj;
+
+
+      %%% Print:
+      disp("Stats for "+method+":")
+      fprintf("  %-14s -> %8.4f iterations\n", method, mean(show.(loop)(method).traj.iterations(2:end)))
+      fprintf("  %-14s -> %8.4f ms\n", method, mean(show.(loop)(method).traj.solve_times(2:end))*1000)
 
 end
 

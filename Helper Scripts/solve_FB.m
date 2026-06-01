@@ -65,9 +65,9 @@ for i = 1:sqp_max_iter
    Jr  = halt.Jr( C.decision.vec.num, C.lambda.vec.num, C.mu.vec.num, C.dop_parameters.vec.num);
 
 
-   warning('off', 'MATLAB:nearlySingularMatrix');
+   % warning('off', 'MATLAB:nearlySingularMatrix');
    Ds = -Jr \ res;
-   warning('on', 'MATLAB:nearlySingularMatrix');
+   % warning('on', 'MATLAB:nearlySingularMatrix');
 
 
    %%%% Extract Newton step:
