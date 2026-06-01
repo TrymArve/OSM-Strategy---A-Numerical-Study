@@ -42,8 +42,8 @@ for loop = ["open", "closed"]
 
    show.(loop)("classic").display_name = "classic";
    show.(loop)("osm").display_name = "OSM";
-   show.(loop)("aggressive").display_name= "aggr.(1)";
-   show.(loop)("aggressive_2").display_name = "aggr.(2)";
+   show.(loop)("aggressive").display_name= "aggr.(A)";
+   show.(loop)("aggressive_2").display_name = "aggr.(B)";
    show.(loop)("linear_term").display_name  = "linear-term";
 
 

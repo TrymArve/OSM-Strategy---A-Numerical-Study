@@ -6,7 +6,7 @@ Set_Up
 iterations  = struct;
 solve_times = struct;
 
-Case = "case_1";
+Case = "case_2";
 
 methods = ["classic","osm","aggressive","aggressive_2","linear_term"];
 for loop = ["open", "closed"]
