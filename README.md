@@ -422,19 +422,6 @@ A key point of the study is that OSM can discourage the controller from using a 
 
 ## Citation
 
-If you use this code, please cite the associated paper once bibliographic information is available.
+If you use this code, please cite the associated paper: _to be added_
 
-Suggested placeholder:
 
-```bibtex
-@misc{gabrielsen2026osm,
-  title  = {Output Sensitivity Modification for Nonlinear Model Predictive Control},
-  author = {Gabrielsen, Trym Arve Lund and Imsland, Lars Struen and Krishnamoorthy, Dinesh},
-  year   = {2026},
-  note   = {Code repository: OSM-Strategy---A-Numerical-Study}
-}
-```
-
-## License
-
-No license information is specified here. Add a license file if the repository is intended for public reuse, modification, or redistribution.
